@@ -1,0 +1,534 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- tailwind -->
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <!-- tailwind -->
+
+    <link rel="stylesheet" href="{% static 'main/css/custom-style.css' %}">
+
+    <!-- map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+     <!-- map -->
+
+     <!-- chartjs -->
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+     <!-- chartjs  -->
+
+     <!-- fontawesome  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+     <!-- globejs  -->
+     <script src="{% static 'main/js/globe/api.js' %}"></script>
+    <script src="{% static 'main/js/globe.js' %}"></script>
+  
+    
+
+
+</head>
+<body onload="globeInitialize()">
+    
+    <!-- mobile menu  -->
+    <div class="hidden w-full flex-row-reverse md:hidden mobile-nav-container" style="height:100vh;position:absolute;top:0;left:0;z-index:100;" id="mobile-nav-container">
+       
+        <div class="w-4/5" style="height:100vh;background-color: #282828;z-index:200">
+            <div class="w-full flex flex-row-reverse">
+                <div class="m-10 p-5" id="mobile-nav-close" style="color:white;">
+                    <img src="{% static 'main/images/icon-5.png' %}" alt="">
+                </div>
+
+            </div>
+            <div class="flex flex-col text-2xl mobile-nav nav-links" style="color:white">
+                <div id="home">Home</div>
+                <div class="" id="about">About INUP</div>
+                <div class="" id="events">Events</div>
+                <div class="" id="industry">Industry</div>
+                <div class="" id="r&d">Research & Development</div>
+                <div class="" id="users">Users</div>
+
+            </div>
+           
+        
+        </div>
+        <div class="w-1/5" style="background-color: black;opacity:0.5"></div>
+
+    </div>
+      <!-- mobile menu  -->
+    <!-- header -->
+    <div class="header-top flex justify-between w-full" id="header">
+        <div class="w-1/2 my-1 mx-1 sm:w-1/3 md:w-1/5 p-2">
+            
+            <img src="{% static 'main/images//inup-logo-1.png' %}" alt="" class="w-full">
+        </div>
+        <div class="w-1/2 my-1 mx-1 sm:w-1/3 md:w-1/6 p-2">
+            <img src="{% static 'main/images/meity-logo.png' %}" alt="" class="w-full">
+
+        </div>
+    </div>
+    <!-- header  -->
+
+    <!-- navbar -->
+            <!-- small screen -->
+            <div class="w-full flex flex-row-reverse md:hidden" style="background-color:#282828;">
+                <div class="w-1/5 p-4 flex flex-row-reverse">
+                    <img src="{% static 'main/images/icon-4.png' %}" alt="" id="mobile-nav-open">
+                </div>
+
+            </div>
+         
+
+
+
+            <!-- small screen -->
+            <!-- big screen     -->
+            <div class="hidden md:flex w-full text-white justify-center text-xl" style="background-color:#282828">
+                <div class="w-4/5 flex justify-evenly py-4 nav-links">
+                    <div class="nav-links py-2" id="homea">Home</div>
+                    <div class="nav-links py-2" id="abouta">About INUP</div>
+                    <div class="nav-links py-2" id="eventsa">Events</div>
+                    <div class="nav-links py-2" id="industrya">Industry</div>
+                    <div class="nav-links py-2" id="r&da">Research & Development</div>
+                    <div class="nav-links py-2" id="usersa">Users</div>
+                  
+                </div>
+
+            </div>
+
+
+            <!-- big screen     -->
+            
+
+    <!-- navbar  -->
+    <!-- section1 -->
+    <div class="flex-col md:flex-row w-full flex">
+        <div class="w-full md:w-8/12">
+            <div class="w-full">
+                <div class="carousel relative rounded overflow-hidden shadow-xl">
+                    <div class="carousel-inner relative overflow-hidden w-full">
+                      <!--Slide 1-->
+                      <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden=""
+                        checked="checked">
+                      <div class="carousel-item absolute opacity-0 bg-center" style="height:500px; background-image: url({% static 'main/images/carousel-1.png' %});background-size:cover">
+                      
+                      </div>
+                      <label for="carousel-3"
+                        class="control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto flex justify-center content-center"><i
+                          class="fas fa-angle-left mt-3"></i></label>
+                      <label for="carousel-2"
+                        class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"><i
+                          class="fas fa-angle-right mt-3"></i></label>
+                  
+                      <!--Slide 2-->
+                      <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+                      <div class="carousel-item absolute opacity-0 bg-center" style="height:500px; background-image: url({% static 'main/images/carousel-2.png' %});background-size:cover">
+                      </div>
+                      <label for="carousel-1"
+                        class=" control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"><i
+                          class="fas fa-angle-left mt-3"></i></label>
+                      <label for="carousel-3"
+                        class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"><i
+                          class="fas fa-angle-right mt-3"></i></label>
+                  
+                      <!--Slide 3-->
+                      <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+                      <div class="carousel-item absolute opacity-0" style="height:500px; background-image:url({% static 'main/images/carousel-3.png' %});background-size:cover">
+                      </div>
+                      <label for="carousel-2"
+                        class="control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto"><i
+                          class="fas fa-angle-left mt-3"></i></label>
+                      <label for="carousel-1"
+                        class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto"><i
+                          class="fas fa-angle-right mt-3"></i></label>
+                  
+                      <!-- Add additional indicators for each slide-->
+                      <ol class="carousel-indicators">
+                        <li class="inline-block mr-3">
+                          <label for="carousel-1"
+                            class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+                        </li>
+                        <li class="inline-block mr-3">
+                          <label for="carousel-2"
+                            class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+                        </li>
+                        <li class="inline-block mr-3">
+                          <label for="carousel-3"
+                            class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
+                        </li>
+                      </ol>
+                  
+                    </div>
+                  </div>
+
+            </div>
+        
+        </div>
+       
+        
+         <div class="w-full md:w-4/12 lg:m-6 lg:rounded-2xl lg:p-6" style="background-color:#012443;box-shadow: 0px 4px 16px rgba(38, 22, 121, 0.4);">
+            <div class="p-4 w-full">
+                <div class="flex justify-between text-white">
+                    <div class="text-xl" style="font-weight:600;"><a href="">HIGHLIGHTS </a></div>
+                    <div class=""><a href="">View all</a></div>
+                </div>
+               
+
+            </div>
+            <div class="w-full flex flex-col text-white text-justify"  style="height:350px;overflow-y:hidden;width:96%;margin:auto">
+               
+                    <div class="w-full flex flex-row items-start pt-2 pb-4 pl-4 border-b-2" >
+                       
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                     </div>
+                    <div class="w-full flex flex-row items-start pt-2 pb-4 pl-4 border-b-2">
+                       
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    
+                    </div>
+                   
+                    
+            </div>
+            
+            
+        </div>
+    </div>
+    <!-- section1 -->
+
+    <!-- section2 -->
+    <div class="w-full flex justify-center mt-20">
+        <div class="w-11/12 flex flex-row justify-evenly">
+          <div class=""><a href="https://iitg.ac.in/nano/" target="_blank"><img src="{% static 'main/images/insti-1.png' %}" alt="" class=""></a></div>
+          <div class=""><a href="http://www.iitkgp.ac.in/" target="_blank"><img src="{% static 'main/images/insti-2.png' %}" alt="" class=""></a></div>
+          <div class=""><a href="https://www.iitm.ac.in/" target="_blank"><img src="{% static 'main/images/insti-3.png' %}" alt="" class=""></a></div>
+          <div class=""><a href="http://iitbnf.iitb.ac.in/iitbnf/" target="_blank"><img src="{% static 'main/images/insti-4.png' %}" alt="" class=""></a></div>
+          <div class=""><a href="http://www.cense.iisc.ac.in/" target="_blank"><img src="{% static 'main/images/insti-5.png' %}" alt="" class=""></a></div>
+          <div class=""><a href="https://home.iitd.ac.in/" target="_blank"><img src="{% static 'main/images/insti-6.png' %}" alt="" class=""></a></div>
+          
+        
+        </div>
+    </div>
+    <!-- section2 -->
+
+    <!-- section3 -->
+    <div class="w-full flex justify-center mt-20" id="middle">
+        <div class="w-4/5 flex flex-col lg:flex-row">
+            <div class="w-full lg:w-1/3  mt-8">
+                <div class="w-full flex justify-between text-white p-3 rounded" style="background-color:#FF4848">
+                    <div class="">
+                        ONGOING
+                    </div>
+                    <div class="">
+                        View All
+                    </div>
+                </div>
+                <div class="w-full flex" style="background-color:#E5FFFF">
+                    <div class="w-full flex p-4 flex-col" id="style-4" style="height:350px;overflow-y:scroll">
+                        <div class="flex flex-row items-start pt-2 pb-4 border-b-2">
+                            <img src="{% static 'main/images/icon-1.png' %}" alt="" class="h-5 p-1">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            
+                        </div>
+                        <div class="flex flex-row items-start pt-2 pb-4 border-b-2">
+                            <img src="{% static 'main/images/icon-1.png' %}" alt="" class="h-5 p-1">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            
+                        </div>
+                        <div class="flex flex-row items-start pt-2 pb-4 border-b-2">
+                            <img src="{% static 'main/images/icon-1.png' %}" alt="" class="h-5 p-1">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                            
+                        </div>
+                      
+                      
+                        
+
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/3 mt-8 px-4">
+                <!-- <img src="images/map.png" alt="" class="w-full mx-5"> -->
+               <div id="globe">
+
+               </div>
+            
+            </div>
+            <div class="w-full lg:w-1/3 mt-8">
+                <div class="w-full flex justify-between text-white p-3 rounded" style="background-color:#012443">
+                    <div class="">
+                       ANNOUNCEMENTS
+                    </div>
+                    <div class="">
+                        View All
+                    </div>
+                </div>
+                <div class="w-full flex">
+                    <div class="w-full flex p-4 flex-col" id="style-4" style="max-height:350px;overflow-y:scroll;background-color:#E5FFFF">
+                        
+                        <div class="flex flex-row items-start pt-2 pb-4 border-b-2">
+                            <img src="{% static 'main/images/icon-2.png' %}" alt="" class="h-7 pr-1">
+                            <div class="flex flex-col ml-2">
+                                <div style="color:#012443" class="text-xl font-semibold">16 November 2021</div>
+                                <p class="pt-2">IITBNF has evolved over decades through multiple research projects.</p>
+                            </div>
+                         </div>
+
+                         <div class="flex flex-row items-start pt-2 pb-4 border-b-2">
+                            <img src="{% static 'main/images/icon-2.png' %}" alt="" class="h-7 pr-1">
+                            <div class="flex flex-col ml-2">
+                                <div style="color:#012443" class="text-xl font-semibold">16 November 2021</div>
+                                <p class="pt-2">IITBNF has evolved over decades through multiple research projects.</p>
+                            </div>
+                         </div>
+
+                         <div class="flex flex-row items-start pt-2 pb-4 border-b-2">
+                            <img src="{% static 'main/images/icon-2.png' %}" alt="" class="h-7 pr-1">
+                            <div class="flex flex-col ml-2">
+                                <div style="color:#012443" class="text-xl font-semibold">16 November 2021</div>
+                                <p class="pt-2">IITBNF has evolved over decades through multiple research projects.</p>
+                            </div>
+                         </div>
+                        
+                       
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    <!-- section3 -->
+
+    <!-- section4 -->
+    <div class="w-full mt-20">
+        <div class="text-center text-3xl font-bold">
+           
+                PROGRAMME HIGHLIGHTS
+            
+        </div>
+        <div class="w-full flex justify-center text-center text-lg font-semibold" style="color:#263238">
+            <div class="flex flex-col lg:justify-around w-3/5 lg:flex-row">
+                <div class="w-full lg:w-1/4 p-2 chart-card">
+                    <div class="p-2">
+                        <canvas id="Chart1"></canvas>
+                    </div>
+                    <div class="mt-8">MANPOWER</div>
+                </div>
+                <div class="w-full lg:w-1/4 p-2 chart-card">
+                    <div class="p-2">
+                        <canvas id="Chart2"></canvas>
+                    </div>
+                    <div class="mt-8">PROJECTS</div>
+                </div>
+                <div class="w-full lg:w-1/4 p-2 chart-card">
+                    <div class="p-2">
+                        <canvas id="Chart3"></canvas>
+                    </div>
+                    <div class="mt-8">WORKSHOP</div>
+                </div>
+                <div class="w-full lg:w-1/4 p-2 chart-card">
+                    <div class="p-2">
+                        <canvas id="Chart4"></canvas>
+                    </div>
+                    <div class="mt-8">OUTCOMES</div>
+                </div>
+                
+              
+            </div>
+        </div>
+    </div>
+    <!-- section4 -->
+
+    <!-- section5 -->
+    <div class="w-full flex justify-center mt-20" style="background-image:url({% static 'main/images/section-5-bg.png' %})">
+        <div class="w-11/12 px-1 md:w-4/5 flex flex-row justify-center py-5">
+            <div class="w-full text-white md:w-7/12 py-5 lg:mr-8">
+               <div class="text-3xl text-bold">
+                ABOUT THE PROGRAMME
+
+               </div> 
+               <div class="text-justify py-5" style="font-size:1rem">
+                <p><strong>Indian Nanoelectronics Users Programme - Idea to Innovation (INUP-i2i)</strong>, proposes to take the ‘open national nanocenters’ concept to the next stage, while retaining the key aspects of training at different levels introduced in INUP. INUP had predominantly provided easy access to state-of-the-art nano fabrication and characterization facilities to researchers across the country, and has thereby created for the first time a critical mass of hands-on experimental researchers across the country in this area. It is now time for the broadest leveraging of the facilities and technical expertise at all six institutes to enable their journey towards translation and incubation. </p>
+                <p class="mt-4">This will be facilitated, inter alia, by a centralized portal for INUP-i2i which will channel interested users to the appropriate nano-center and its individual portal based on their preference/s and publicizing through various print & social media about all activities under the programme. Database of Users (i.e. Position held in Academia/Industry/R&D Organization) after INUP training will also be maintained for future references and value addition. The coordination of technical, logistical, and informational activities will be carried out through a centralized Project Management Unit (PMU) to be created by IIT Guwahati.</p>
+                </div>
+            </div>
+            <div class="hidden md:flex w-5/12 ml-5">
+               <img src="{% static 'main/images/image-1.png' %}" alt="" class="w-full">
+            </div>
+        
+        </div>
+    </div>
+     <!-- section5 -->
+    
+
+     <!-- footer  -->
+     <div class="w-full mt-20">
+        <div class="w-4/5 flex flex-col lg:flex-row justify-center py-5">
+            <div class="w-full lg:w-1/5 flex justify-center">
+                <div class="w-4/5 lg:w-full flex lg:flex-row justify-between p-1 items-center">
+                    <div class="">
+                        <img src="{% static 'main/images/inup-logo.png' %}" alt="" class="w-full">
+                    
+                    </div>
+                    <div class="">
+                        <img src="{% static 'main/images/meity-logo.png' %}" alt="" class="w-full">
+                    
+                    </div>
+                 </div>
+
+
+            </div>
+            <div class="w-full lg:w-1/5 hidden lg:flex flex-col p-1">
+                <div class="text-lg">
+                    Indian Nanoelectronics Users Programme - Idea to Innovation (INUP-i2i)
+                </div>
+                <div class="mt-20">
+                    (434) 546-4356
+                </div>
+                <div class="mt-8">
+                    contact@lift.agencyr.com
+                </div>
+            
+            </div>
+            <div class="w-full lg:w-1/5 flex flex-col p-1">
+            
+            </div>
+            <div class="w-full lg:w-1/5 flex justify-center">
+                <div class="w-4/5 lg:w-full flex flex-col p-1">
+               
+                    <div class="">
+                        About INUP
+
+                    </div>
+                    <div class="">
+                        Events
+
+                    </div>
+                    <div class="">
+                        Industry
+
+                    </div>
+                    <div class="">
+                        Research & Development
+                    </div>
+                    <div class="">
+                        Users
+
+                    </div>
+                   
+                </div>   
+                
+            </div>
+           
+            <div class="w-full lg:w-1/5 flex  p-1 justify-center items-start">
+                <div class="w-4/5 flex flex-col justify-center text-black text-2xl">
+                    <div class=""><i class="fab fa-facebook-f"></i></div>
+                    <div class=""><i class="fab fa-twitter"></i></div>
+                    <div class=""><i class="fab fa-linkedin"></i></div> 
+                    <div class="lg:mt-10 text-sm">
+                        © 2021 INUP. All rights reserved.
+
+                    </div>
+                   
+                   
+                </div>
+                <div class="hidden lg:flex w-1/5">
+                    <a href="#header"><img src="{% static 'main/images/icon-3.png' %}" alt="" class="w-full"></a>
+                    
+                </div>
+            
+            </div>
+
+            
+
+        </div>
+    </div>
+      <!-- footer  -->
+    
+    
+
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaXDn1hrjgs2uuUzAcDDae8m_BVqut9hk&callback=initMap&v=weekly"
+async
+></script>
+<script>
+let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 24.5941, lng: 85.1376 },
+    zoom: 4.2,
+    minZoom:4.2
+  });
+}
+
+    
+</script>
+
+
+<script>
+    var nav=document.querySelector("#mobile-nav-container");
+    var btnOpen=document.querySelector("#mobile-nav-open");
+    var btnClose=document.querySelector("#mobile-nav-close");
+    var body = document.getElementsByTagName("BODY")[0];
+
+    btnOpen.addEventListener("click",()=>{
+        
+        nav.style.display="flex";
+        body.style.overflow="hidden";
+    })
+
+    btnClose.addEventListener("click",()=>{
+        
+        nav.style.display="none";
+        body.style.overflow="scroll";
+    })
+
+
+</script>
+
+<script src="{% static 'main/js/charts.js' %}"></script>
+
+<script>
+       
+       var getActivePage='{{data.active}}';
+       var activePage=document.getElementById(getActivePage);
+       var activePagea=document.getElementById(getActivePage+'a');
+      
+       
+       activePage.style.color="#6EE772";
+       activePagea.style.color="#6EE772";
+       
+</script>
+
+<script>
+    document.getElementById('globe').style.width="100%";
+    document.getElementById('globe').style.height="100%";
+    document.getElementById('middle').addEventListener("mouseover",()=>{
+       
+       var a=document.getElementsByClassName('we-pp-close');
+       
+      
+      for(var i=0;i<a.length;i++){
+          a[i].removeAttribute("href");
+      }
+
+       
+    })
+    
+</script>
+
+</body>
+</html>
