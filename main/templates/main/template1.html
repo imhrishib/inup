@@ -206,33 +206,31 @@
     <!-- section1 -->
 
     <!-- section2 -->
-    <div class="w-full flex justify-center mt-20">
-        <div class="w-11/12 flex flex-row justify-evenly">
+    <div class="w-full flex justify-center mt-10">
+        <div class="w-11/12 flex flex-row justify-evenly align-center">
           <div class=""><a href="https://iitg.ac.in/nano/" target="_blank"><img src="{% static 'main/images/insti-1.png' %}" alt="" class=""></a></div>
           <div class=""><a href="http://www.iitkgp.ac.in/" target="_blank"><img src="{% static 'main/images/insti-2.png' %}" alt="" class=""></a></div>
           <div class=""><a href="https://www.iitm.ac.in/" target="_blank"><img src="{% static 'main/images/insti-3.png' %}" alt="" class=""></a></div>
           <div class=""><a href="http://iitbnf.iitb.ac.in/iitbnf/" target="_blank"><img src="{% static 'main/images/insti-4.png' %}" alt="" class=""></a></div>
           <div class=""><a href="http://www.cense.iisc.ac.in/" target="_blank"><img src="{% static 'main/images/insti-5.png' %}" alt="" class=""></a></div>
-          <div class=""><a href="https://home.iitd.ac.in/" target="_blank"><img src="{% static 'main/images/insti-6.png' %}" alt="" class=""></a></div>
-          
-        
+          <div class=""><a href="https://home.iitd.ac.in/" target="_blank"><img src="{% static 'main/images/insti-6.png' %}" alt="" class=""></a></div>        
         </div>
     </div>
     <!-- section2 -->
 
     <!-- section3 -->
-    <div class="w-full flex justify-center mt-20" id="middle">
-        <div class="w-4/5 flex flex-col lg:flex-row">
-            <div class="w-full lg:w-1/3  mt-8 shadow-lg">
+    <div class="w-full flex justify-center mt-5" id="middle">
+        <div class="w-10/12 flex flex-col lg:flex-row">
+            <div class="w-full lg:w-1/4  mt-8 shadow-lg"  style="background-color:#E5FFFF">
                 <div class="w-full flex justify-between text-white p-3 rounded" style="background-color:#FF4848">
                     <div class="">
-                        ONGOING
+                        ONGOING ACTIVITIES
                     </div>
                     <div class="">
                         View All
                     </div>
                 </div>
-                <div class="w-full flex" style="background-color:#E5FFFF">
+                <div class="w-full flex">
                     <div class="w-full flex p-4 flex-col" id="style-4" style="height:350px;overflow-y:scroll">
                         <div class="flex flex-row items-start pt-2 pb-4 border-b-2">
                             <img src="{% static 'main/images/icon-1.png' %}" alt="" class="h-5 p-1">
@@ -249,21 +247,16 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                             
                         </div>
-                      
-                      
-                        
 
                     </div>
                 </div>
             </div>
-            <div class="w-full lg:w-1/3 mt-8 px-4">
+            <div class="w-full lg:w-2/4 mt-8 px-4">
                 <!-- <img src="images/map.png" alt="" class="w-full mx-5"> -->
-               <div id="globe">
-
-               </div>
+               <div id="globe" class=""></div>
             
             </div>
-            <div class="w-full lg:w-1/3 mt-8 shadow-lg">
+            <div class="w-full lg:w-1/4 mt-8 shadow-lg" style="background-color:#E5FFFF">
                 <div class="w-full flex justify-between text-white p-3 rounded" style="background-color:#012443">
                     <div class="">
                        ANNOUNCEMENTS
@@ -273,7 +266,7 @@
                     </div>
                 </div>
                 <div class="w-full flex">
-                    <div class="w-full flex p-4 flex-col" id="style-4" style="max-height:350px;overflow-y:scroll;background-color:#E5FFFF">
+                    <div class="w-full flex p-4 flex-col" id="style-4" style="max-height:350px;overflow-y:scroll">
                         
                         <div class="flex flex-row items-start pt-2 pb-4 border-b-2">
                             <img src="{% static 'main/images/icon-2.png' %}" alt="" class="h-7 pr-1">
@@ -313,32 +306,34 @@
 
     <!-- section4 -->
     <div class="w-full mt-20">
-        <div class="text-center text-3xl font-bold">
+        <div class="text-center text-3xl font-bold" style="color:#132d53">
            
-                PROGRAMME HIGHLIGHTS
-            
+                PROGRAMME HIGHLIGHTS            
         </div>
-        <div class="w-full flex justify-center text-center text-lg font-semibold" style="color:#263238">
-            <div class="flex flex-col lg:justify-around w-3/5 lg:flex-row">
-                <div class="w-full lg:w-1/4 p-2 chart-card">
+        <div class="w-2/3 mx-auto mt-3">
+            <hr style="border:1px solid rgba(0,0,0,0.1)">
+        </div>
+        <div class="w-full flex justify-center text-center text-lg font-semibold mt-5" style="color:#263238">
+            <div class="flex flex-col lg:justify-between w-4/5 lg:flex-row">
+                <div class="w-full lg:w-1/4 p-5">
                     <div class="p-2">
                         <canvas id="Chart1"></canvas>
                     </div>
                     <div class="mt-8">MANPOWER</div>
                 </div>
-                <div class="w-full lg:w-1/4 p-2 chart-card">
+                <div class="w-full lg:w-1/4 p-5">
                     <div class="p-2">
                         <canvas id="Chart2"></canvas>
                     </div>
                     <div class="mt-8">PROJECTS</div>
                 </div>
-                <div class="w-full lg:w-1/4 p-2 chart-card">
+                <div class="w-full lg:w-1/4 p-5">
                     <div class="p-2">
                         <canvas id="Chart3"></canvas>
                     </div>
                     <div class="mt-8">WORKSHOP</div>
                 </div>
-                <div class="w-full lg:w-1/4 p-2 chart-card">
+                <div class="w-full lg:w-1/4 p-5">
                     <div class="p-2">
                         <canvas id="Chart4"></canvas>
                     </div>
@@ -352,20 +347,20 @@
     <!-- section4 -->
 
     <!-- section5 -->
-    <div class="w-full flex justify-center mt-20" style="background-image:url({% static 'main/images/section-5-bg.png' %})">
-        <div class="w-11/12 px-1 md:w-4/5 flex flex-row justify-center py-5">
+    <div class="w-full flex justify-center mt-20 shadow-lg" style="background-image:url({% static 'main/images/section-5-bg.png' %})">
+        <div class="w-11/12 px-1 md:w-4/5 flex flex-row justify-center align-center py-10">
             <div class="w-full text-white md:w-7/12 py-5 lg:mr-8">
                <div class="text-3xl text-bold">
                 ABOUT THE PROGRAMME
                 <hr>
                </div> 
-               <div class="text-justify py-5" style="font-size:1rem">
+               <div class="text-justify py-5" style="font-size:1.25rem">
                 <p><strong>Indian Nanoelectronics Users Programme - Idea to Innovation (INUP-i2i)</strong>, proposes to take the ‘open national nanocenters’ concept to the next stage, while retaining the key aspects of training at different levels introduced in INUP. INUP had predominantly provided easy access to state-of-the-art nano fabrication and characterization facilities to researchers across the country, and has thereby created for the first time a critical mass of hands-on experimental researchers across the country in this area. It is now time for the broadest leveraging of the facilities and technical expertise at all six institutes to enable their journey towards translation and incubation. </p>
                 <p class="mt-4">This will be facilitated, inter alia, by a centralized portal for INUP-i2i which will channel interested users to the appropriate nano-center and its individual portal based on their preference/s and publicizing through various print & social media about all activities under the programme. Database of Users (i.e. Position held in Academia/Industry/R&D Organization) after INUP training will also be maintained for future references and value addition. The coordination of technical, logistical, and informational activities will be carried out through a centralized Project Management Unit (PMU) to be created by IIT Guwahati.</p>
                 </div>
             </div>
-            <div class="hidden md:flex w-5/12 ml-5">
-               <img src="{% static 'main/images/image-1.png' %}" alt="" class="w-full rounded-2xl">
+            <div class="hidden md:flex w-5/12 ml-5 py-8">
+               <img src="{% static 'main/images/image-1.png' %}" alt="" class="w-full rounded-2xl shadow-lg">
             </div>
         
         </div>
