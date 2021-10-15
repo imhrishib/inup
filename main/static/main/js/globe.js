@@ -95,4 +95,26 @@ function globeInitialize() {
         </a>
     </div>
     `);
+
+    globeMarkerPopupBugFix();
+
+}
+
+
+// [Bug Fix] Clicking close button on marker popup scrolls up the page to begining.
+
+let globeMarkerPopupBugFix = () => {
+    document.getElementById('globe').style.width = "100%";
+    document.getElementById('globe').style.height = "100%";
+    document.getElementById('middle').addEventListener("mouseover", () => {
+
+        var a = document.getElementsByClassName('we-pp-close');
+
+
+        for (var i = 0; i < a.length; i++) {
+            a[i].removeAttribute("href");
+        }
+
+
+    })
 }
