@@ -1,0 +1,11 @@
+.nav-desktop div{
+    padding:2rem 2rem;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.active-sec{
+    background-color:#5433FF;
+    color:white;
+}
+

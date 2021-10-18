@@ -11,15 +11,14 @@
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <!-- tailwind -->
 
-    <link rel="stylesheet" href="{% static 'main/css/custom-style.css' %}">
-
+    
     <!-- map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+   crossorigin=""></script> -->
      <!-- map -->
 
      <!-- chartjs -->
@@ -31,14 +30,14 @@
      <!-- fontawesome  -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
      <!-- globejs  -->
-     <script src="{% static 'main/js/globe/api.js' %}"></script>
+     <!-- <script src="{% static 'main/js/globe/api.js' %}"></script> -->
     <script src="{% static 'main/js/globe.js' %}"></script>
   
     {% block head %}   {% endblock head %}
 
 
 </head>
-<body onload="globeInitialize()">
+<body onload="initializeGlobe()">
     
     <!-- mobile menu  -->
     <div class="hidden w-full flex-row-reverse md:hidden mobile-nav-container" style="height:100vh;position:absolute;top:0;left:0;z-index:100;" id="mobile-nav-container">
@@ -51,12 +50,12 @@
 
             </div>
             <div class="flex flex-col text-2xl mobile-nav nav-links" style="color:white">
-                <div id="home">Home</div>
-                <div class="" id="about">About INUP</div>
-                <div class="" id="events">Events</div>
-                <div class="" id="industry">Industry</div>
-                <div class="" id="r&d">Research & Development</div>
-                <div class="" id="users">Users</div>
+                <div id="home"><a href="{% url 'home' %}">Home</a></div>
+                <div class="" id="about"><a href="{% url 'about' %}">About INUP</a></div>
+                <div class="" id="events"><a href="{% url 'home' %}">Events</a></div>
+                <div class="" id="industry"><a href="{% url 'home' %}">Industry</a></div>
+                <div class="" id="r&d"><a href="{% url 'home' %}">Research & Development</a></div>
+                <div class="" id="users"><a href="{% url 'home' %}">Users</a></div>
 
             </div>
            
@@ -95,12 +94,12 @@
             <!-- big screen     -->
             <div class="hidden md:flex w-full text-white justify-center text-xl" style="background-color:#282828">
                 <div class="w-4/5 flex justify-evenly py-4 nav-links">
-                    <div class="nav-links py-2" id="homea">Home</div>
-                    <div class="nav-links py-2" id="abouta">About INUP</div>
-                    <div class="nav-links py-2" id="eventsa">Events</div>
-                    <div class="nav-links py-2" id="industrya">Industry</div>
-                    <div class="nav-links py-2" id="r&da">Research & Development</div>
-                    <div class="nav-links py-2" id="usersa">Users</div>
+                    <div class="nav-links py-2" id="homea"><a href="{% url 'home' %}">Home</a></div>
+                    <div class="nav-links py-2" id="abouta"><a href="{% url 'about' %}">About INUP</a></div>
+                    <div class="nav-links py-2" id="eventsa"><a href="{% url 'home' %}">Events</a></div>
+                    <div class="nav-links py-2" id="industrya"><a href="{% url 'home' %}">Industry</a></div>
+                    <div class="nav-links py-2" id="r&da"><a href="{% url 'home' %}">Research & Development</a></div>
+                    <div class="nav-links py-2" id="usersa"><a href="{% url 'home' %}">Users</a></div>
                   
                 </div>
 
@@ -115,15 +114,15 @@
 {% block content %}{% endblock content %}
 
  <!-- footer  -->
- <div class="w-full mt-20">
-    <div class="w-4/5 flex flex-col lg:flex-row justify-center py-5">
-        <div class="w-full lg:w-1/5 flex justify-center">
-            <div class="w-4/5 lg:w-full flex lg:flex-row justify-between p-1 items-center">
-                <div class="">
+ <div class="w-full mt-20 flex justify-center" style="background-color:#EEEEEE;">
+    <div class="w-4/5 flex flex-col lg:flex-row justify-center py-10">
+        <div class="w-full lg:w-1/4 flex justify-center">
+            <div class="w-4/5 lg:w-full flex lg:flex-col justify-between p-1 items-center">
+                <div class="p-1" style="width:60%">
                     <img src="{% static 'main/images/inup-logo.png' %}" alt="" class="w-full">
                 
                 </div>
-                <div class="">
+                <div class="p-1" style="width:60%">
                     <img src="{% static 'main/images/meity-logo.png' %}" alt="" class="w-full">
                 
                 </div>
@@ -131,24 +130,14 @@
 
 
         </div>
-        <div class="w-full lg:w-1/5 hidden lg:flex flex-col p-1">
-            <div class="text-lg">
-                Indian Nanoelectronics Users Programme - Idea to Innovation (INUP-i2i)
-            </div>
-            <div class="mt-20">
-                (434) 546-4356
-            </div>
-            <div class="mt-8">
-                contact@lift.agencyr.com
-            </div>
         
-        </div>
-        <div class="w-full lg:w-1/5 flex flex-col p-1">
         
-        </div>
-        <div class="w-full lg:w-1/5 flex justify-center">
+        <div class="w-full lg:w-1/4 flex justify-center font-bold">
             <div class="w-4/5 lg:w-full flex flex-col p-1">
-           
+                <div class="mb-5">
+                    Links
+
+                </div>
                 <div class="">
                     About INUP
 
@@ -172,16 +161,25 @@
             </div>   
             
         </div>
+        <div class="w-full lg:w-1/4 hidden lg:flex flex-col p-1">
+            <div class="text-lg">
+                Contact Us
+            </div>
+            <div class="mt-5">
+                Phone no : (434) 546-4356
+            </div>
+            <div class="mt-5">
+                Email : contact@lift.agencyr.com
+            </div>
+        
+        </div>
        
-        <div class="w-full lg:w-1/5 flex  p-1 justify-center items-start">
-            <div class="w-4/5 flex flex-col justify-center text-black text-2xl">
-                <div class=""><i class="fab fa-facebook-f"></i></div>
-                <div class=""><i class="fab fa-twitter"></i></div>
-                <div class=""><i class="fab fa-linkedin"></i></div> 
-                <div class="lg:mt-10 text-sm">
-                    © 2021 INUP. All rights reserved.
-
-                </div>
+        <div class="w-full lg:w-1/4 flex  p-1 justify-center items-start">
+            <div class="w-4/5 flex flex-row justify-center text-black text-2xl">
+                <div class="m-5"><i class="fab fa-facebook-f"></i></div>
+                <div class="m-5"><i class="fab fa-twitter"></i></div>
+                <div class="m-5"><i class="fab fa-linkedin"></i></div> 
+                
                
                
             </div>
@@ -195,12 +193,16 @@
         
 
     </div>
+    
+</div>
+<div class="py-2 text-white font-semibold w-full" style="background-color:#5433FF">
+    <center><p>© 2021 | INUP i2i  web portal</p></center>
 </div>
   <!-- footer  -->
 
 
 
-<script
+<!-- <script
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaXDn1hrjgs2uuUzAcDDae8m_BVqut9hk&callback=initMap&v=weekly"
 async
 ></script>
@@ -216,7 +218,7 @@ minZoom:4.2
 }
 
 
-</script>
+</script> -->
 
 
 <script>
