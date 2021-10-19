@@ -92,4 +92,59 @@ body{
     /*Set to match the Tailwind colour you want the active one to be */
   }
 
-/* carousel */
+/* sidemenu */
+.sidemenu{
+height: 100px;
+width:50px;
+background-color: #000000;
+position: absolute;
+color: #F5F5F5;
+right:0;
+display: flex;
+justify-content: center;
+align-items: center;
+top: 300px;
+position: fixed;
+}
+
+
+
+
+
+
+.sidebar{
+  height: 100%;
+  width:400px;
+  background-color: #e2e2e2;
+  position: absolute;
+  display: none;
+  color: #F5F5F5;
+  right:0;
+  top:0px;
+  z-index: 1;
+  position: fixed;
+  }
+  .sidebar.active{
+    height: 100%;
+    width:400px;
+    background-color: #ffffff;
+    position: absolute;
+    display: block;
+    color: #F5F5F5;
+    right:0;
+    top:0px;
+    z-index: 1;
+    position: fixed;
+    transition: 300ms;
+   
+    }
+    
+
+    .closebox{
+      height: 50px;
+      width: 100%;
+      text-align: center;
+      background-color: black;
+    }
+
+
