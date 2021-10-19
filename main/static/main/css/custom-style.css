@@ -147,4 +147,8 @@ position: fixed;
       background-color: black;
     }
 
-
+    @media only screen and (max-width: 600px) {
+      .sidemenu {
+        display: none;
+      }
+    }
