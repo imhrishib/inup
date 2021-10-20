@@ -25,7 +25,7 @@ function initializeGlobe() {
     });
     viewer.scene.backgroundColor = Cesium.Color.TRANSPARENT;
     viewer.camera.setView({
-        destination: Cesium.Cartesian3.fromDegrees(78.9629, 20.5937, 17000000)
+        destination: Cesium.Cartesian3.fromDegrees(78.9629, 20.5937, 10000000)
     });
 
     // Add marker for IIT Guwahati
