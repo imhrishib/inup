@@ -1,19 +1,14 @@
-{% extends 'main/base1.html' %}
-{% load static %}
-
-{% block head %}
+{% extends 'main/base1.html' %} {% load static %} {% block head %}
 <link rel="stylesheet" href="{% static 'main/css/custom-style.css' %}">
-<link rel="stylesheet" href="{% static 'main/css/about-style.css' %}">
-{% endblock head %}
-{% block content%}
+<link rel="stylesheet" href="{% static 'main/css/about-style.css' %}"> {% endblock head %} {% block content%}
 <div class="hidden lg:hidden justify-center w-2/3" style="background-color:#F4F4F4;z-index:300;position:absolute;" id="mobile-nav">
     <div class="w-full flex flex-col nav-desktop">
         <div class="btnsm" id="sec-vision-btnm">Vision</div>
         <div class="btnsm" id="sec-objective-btnm">Objective</div>
         <div class="btnsm" id="sec-features-btnm">Salient Features</div>
         <div class="btnsm" id="sec-modalities-btnm">Modalities</div>
-        <div class="btnsm" id="sec-programmes-btnm">Types of Programmes at INUP</div>
-        <div class="btnsm" id="sec-team-btnm">INUP Team</div>
+        <div class="btnsm" id="sec-programmes-btnm">Types of Programme</div>
+        <div class="btnsm" id="sec-team-btnm">INUP-i2i Team</div>
         <div class="btnsm" id="sec-investigators-btnm">Investigators</div>
         <div class="btnsm" id="sec-contact-btnm">Contact Us</div>
     </div>
@@ -24,39 +19,49 @@
         <img src="{% static 'main/images/icon-6.png' %}" alt="" class="w-full">
     </div>
 </div>
+<!-- sidebar -->
+
+
+
+
+
 <div class="w-full flex">
-    <div class="hidden lg:w-3/12 lg:flex justify-center" style="background-color:#F4F4F4;">
+    <div class="hidden lg:w-2/12 lg:flex justify-center" style="background-color:#F4F4F4;">
         <div class="w-full flex flex-col nav-desktop">
             <div class="active-sec btns" id="sec-vision-btn">Vision</div>
             <div class="btns" id="sec-objective-btn">Objective</div>
             <div class="btns" id="sec-features-btn">Salient Features</div>
             <div class="btns" id="sec-modalities-btn">Modalities</div>
-            <div class="btns" id="sec-programmes-btn">Types of Programmes at INUP</div>
-            <div class="btns" id="sec-team-btn">INUP Team</div>
+            <div class="btns" id="sec-programmes-btn">Types of Programme</div>
+            <div class="btns" id="sec-team-btn">INUP-i2i Team</div>
             <div class="btns" id="sec-investigators-btn">Investigators</div>
             <div class="btns" id="sec-contact-btn">Contact Us</div>
         </div>
-    
+
     </div>
     <div class="w-full md:w-9/12 flex justify-center">
-       
+
         <div class="w-4/5 m-8">
             <div class="w-full sec-containers" id="sec-vision">
                 <h1 class="text-4xl font-bold">Vision</h1>
                 <hr class="mt-5">
                 <div class="mt-10">
+                    {% comment %}
                     <p class="text-xl font-bold mt-4">
                         Motivation
 
-                    </p>
+                    </p> {% endcomment %}
                     <div class="">
-                        <img class="object-contain h-100 w-full mt-2" src="{% static 'main/images/vision1.png' %}" alt="" >
-
+                        <img class="object-contain w-100 mr-10 mb-5 shadow-xl rounded float-left" src="{% static 'main/images/vision1.png' %}" alt="">
                     </div>
-                    
-                    <p class="mt-2">
-                        The Indian Nanoelectronics Users Program (INUP) was conceived and supported by MeitY and the Office of the PSA as an integral part of the initiative of establishing a Centre for Excellence in Nanoelectronics (CEN) at both IISc and IIT Bombay in 2006. It was envisioned that both the nanocenters, built at great expense and staffed with teams of technical experts, should be national centres whose facilities are open to aspiring academic researchers from around the country. Not only would it be very difficult to set up centres everywhere in the country and provide them with required expert staff, but “open national nanocenters” would also inculcate a spirit of collaboration among researchers and raise the efficiency of the nanocenters’ operations by bringing in researchers from elsewhere in the country.
-    
+
+                    {% comment %}
+                    <!-- <p class="mt-2">
+                        The Indian Nanoelectronics Users Program (INUP) was conceived and supported by MeitY and the Office of the PSA as an integral part of the initiative of establishing a Centre for Excellence in Nanoelectronics (CEN) at both IISc and IIT Bombay in 2006.
+                        It was envisioned that both the nanocenters, built at great expense and staffed with teams of technical experts, should be national centres whose facilities are open to aspiring academic researchers from around the country. Not
+                        only would it be very difficult to set up centres everywhere in the country and provide them with required expert staff, but “open national nanocenters” would also inculcate a spirit of collaboration among researchers and raise
+                        the efficiency of the nanocenters’ operations by bringing in researchers from elsewhere in the country.
+
                     </p>
 
                     <p class="text-xl font-bold mt-4">
@@ -64,109 +69,124 @@
 
                     </p>
                     <p class="mt-2">
-                        After IISc and IITB, MeitY initiated nanocenters at IIT Madras (IITM) and IIT Delhi (IITD) in 2011, as well as one at IIT Guwahati (IITG) in 2015. The one at IITM focused on Nanomechanical Systems and Nanophotonics, the one at IITD on “Non-Silicon Based Technologies”, while the one at IITG focused on Theranostic Devices with an eye on the unique requirements of the North East of India. In view of the success of the INUP program, there was intent from MeitY and readiness from these nanocenters to also open up their facilities to academic users from across India. 
+                        After IISc and IITB, MeitY initiated nanocenters at IIT Madras (IITM) and IIT Delhi (IITD) in 2011, as well as one at IIT Guwahati (IITG) in 2015. The one at IITM focused on Nanomechanical Systems and Nanophotonics, the one at IITD on “Non-Silicon Based
+                        Technologies”, while the one at IITG focused on Theranostic Devices with an eye on the unique requirements of the North East of India. In view of the success of the INUP program, there was intent from MeitY and readiness from these
+                        nanocenters to also open up their facilities to academic users from across India. In 2018, the nanocenters at IISc, IITB, IITD, IITM, along with the facility at IIT Kharagpur, were brought under one umbrella - the Nanoelectronics
+                        Network for Research and Applications (NNetRA) - supported for four years thence by MeitY and DST combined. This collaborative network focuses on translational research in all areas of nanoelectronics, spanning Safety (strategic/security),
+                        Healthcare, Energy & Environment, Agriculture, and other topics in Nano. Now, it is proposed to bring all six nanocenters, viz. at IISc, IITB, IITD, IITG, IITKgp and IITM under one umbrella to open up their facilities to the nation,
+                        with the benefit of the INUP experience and with support from MeitY. This initiative comes at a crucial moment in the development of India’s ecosystem for Electronic System Design and Manufacturing (ESDM) as she finally takes concrete
+                        steps towards self-reliance (Aatma Nirbhar Bharat) in this critical sector. Importantly, in view of the criticality of capacity building at this time, it is proposed that the initiative be supported under the aegis of the HRD Division
+                        of MeitY. The proposal has been revised in accordance with inputs from the Working Group thereof.
 
-                        In 2018, the nanocenters at IISc, IITB, IITD, IITM, along with the facility at IIT Kharagpur, were brought under one umbrella - the Nanoelectronics Network for Research and Applications (NNetRA) - supported for four years thence by MeitY and DST combined. This collaborative network focuses on translational research in all areas of nanoelectronics, spanning Safety (strategic/security), Healthcare, Energy & Environment, Agriculture, and other topics in Nano. 
-                        Now, it is proposed to bring all six nanocenters, viz. at IISc, IITB, IITD, IITG, IITKgp and IITM under one umbrella to open up their facilities to the nation, with the benefit of the INUP experience and with support from MeitY. This initiative comes at a crucial moment in the development of India’s ecosystem for Electronic System Design and Manufacturing (ESDM) as she finally takes concrete steps towards self-reliance (Aatma Nirbhar Bharat) in this critical sector. 
 
-                        Importantly, in view of the criticality of capacity building at this time, it is proposed that the initiative be supported under the aegis of the HRD Division of MeitY. The proposal has been revised in accordance with inputs from the Working Group thereof.
-
-    
                     </p>
                     <p class="text-xl font-bold mt-4">
-                       Plan for the future
-                    </p>
-                    <p class="mt-2">
-                        This new program, Indian Nanoelectronics Users’ Programme - Idea to Innovation (INUP-i2i), proposes to take the ‘open national nanocenters’ concept to the next stage, while retaining the key aspects of training at different levels introduced in INUP. INUP had predominantly provided easy access to state-of-the-art nano fabrication and characterization facilities to researchers across the country, and has thereby created for the first time a critical mass of hands-on experimental researchers across the country in this area. It is now time for the broadest leveraging of the facilities and technical expertise at all six institutes to enable their journey towards translation and incubation. This will be facilitated, inter alia, by a centralized portal for INUP-i2i which will channel interested users to the appropriate nano-center and its individual portal based on their preference/s and publicizing through various print & social media about all activities under the programme. Database of Users (i.e. Position held in Academia/Industry/R&D Organization) after INUP training will also be maintained for future references and value addition. The coordination of technical, logistical, and informational activities will be carried out through a centralized Project Management Unit (PMU) to be created by IIT Guwahati.
+                        Plan for the future
+                    </p> -->
+                    {% endcomment %}
+                    <div class="mt-2 text-justify text-xl">
 
-                        Going beyond INUP, INUP-i2i envisions the following new dimensions to training and research facilitation. Firstly, a large fraction of familiarization workshops will be conducted in the virtual mode; this mix will balance the need for wider outreach with the often-inspiring effect of personal interaction. Secondly, hands-on training will see substantial use of digital content prepared under the aegis of INUP-i2i. One common training certificate (bearing name of all six institutions and MeitY), duly signed by all participating agencies and MeitY would be provided to all participants. Thirdly, each of the aforementioned six institutes will act as a hub, with a network of collaborating institutes around it (typically in the same region and/or other under-served regions). We note that the broad and deep institute-to-institute collaboration envisaged here goes beyond the research facilitation of the past through INUP.
+                        <p class="mb-5">This new program, <strong>Indian Nanoelectronics Users’ Programme - Idea to
+                                Innovation (INUP-i2i)</strong>, proposes to take the ‘open national nanocenters’ concept to the next stage, while retaining the key aspects of training at different levels introduced in INUP. INUP had predominantly provided
+                            easy access to state-of-the-art nano fabrication and characterization facilities to researchers across the country, and has thereby created for the first time a critical mass of hands-on experimental researchers across the
+                            country in this area.
+                        </p>
+                        <p class="mb-5">It is now time for the broadest leveraging of the facilities and technical expertise at all six institutes to enable their journey towards translation and incubation. This will be facilitated, inter alia, by a centralized portal
+                            for INUP-i2i which will channel interested users to the appropriate nano-center and its individual portal based on their preference/s and publicizing through various print & social media about all activities under the programme.
+                            Database of Users (i.e. Position held in Academia/Industry/R&D Organization) after INUP training will also be maintained for future references and value addition. The coordination of technical, logistical, and informational
+                            activities will be carried out through a centralized Project Management Unit (PMU) to be created by IIT Guwahati.
+                        </p>
+                        <p class="mb-5">Going beyond INUP, INUP-i2i envisions the following new dimensions to training and research facilitation. Firstly, a large fraction of familiarization workshops will be conducted in the virtual mode; this mix will balance the need
+                            for wider outreach with the often-inspiring effect of personal interaction. Secondly, hands-on training will see substantial use of digital content prepared under the aegis of INUP-i2i. One common training certificate (bearing
+                            name of all six institutions and MeitY), duly signed by all participating agencies and MeitY would be provided to all participants. Thirdly, each of the aforementioned six institutes will act as a hub, with a network of collaborating
+                            institutes around it (typically in the same region and/or other under-served regions). We note that the broad and deep institute-to-institute collaboration envisaged here goes beyond the research facilitation of the past through
+                            INUP.
+                        </p>
+                        <p class="mb-5">The implementing institutes propose to implement formal certification that will maximize its value for the students / trainees. The following options thereof will be studied within the first year. First, certification under the
+                            National Skills Qualification Framework will be explored through the relevant agencies. Second, given the implementing institutes’ standing as Institutes of National Importance in the field of HRD with the mandate of floating
+                            certified courses and programs, it is also proposed to explore formal certification through internal IISc/IIT channels. [E.g. Continuing Education Programme at IITs that have the mandate of serving the manpower training and
+                            knowledge upgradation needs of industry, academia and research organizations, outside of regular degree programs.</p>
+                        <p class="mb-5">In addition to support for training and exploratory research, INUP-i2i will incorporate focused support for translational research addressing Grand Challenges of our nation and society. This will comprise the following: identifying
+                            promising nanoengineering solutions through Hackathons, supporting innovative R&D projects, facilitating incubation, and incorporating support to startups (including, but not limited to, those incubated out of the nanocenters
+                            at these six institutes) by subsidizing their facility usage and providing them networking opportunities with incubators and prototyping centers. It is proposed that in this initial phase of the ‘unified’ program, IISc and
+                            IITB would focus more on supporting research projects and startups, while IITD, IITG, IITKgp and IITM will carry forward the training mandate to a somewhat larger degree. The scope of the program is illustrated below.
+                        </p>
+                        <div class="w-9/12  mr-auto ml-auto mb-5">
+                            <img class="object-contain w-full rounded" src="{% static 'main/images/v2.png' %}" alt="">
+                        </div>
+                        <p class="mb-5">
+                            While innovation and incubation will be a strong focus for the future everywhere, we also note the importance of ensuring that academic research, which forms the basis of patents and subsequently of startups, continues to be supported; and, that the next
+                            generation of researchers and innovators are trained. This proposal for INUP-i2i seeks to provide a comprehensive solution for training, research and incubation in nanoelectronics with nation-wide coverage. We seek MeitY’s
+                            funding and support for a period of three years at these six institutes. The six institutes are proud to share the goal of expending substantial fractions of the funding serving users from communities that are under-represented
+                            (SC/ST) and/or areas that are under-served (e.g. North-East) in the current scenario (the exact fractions for the six institutes are mentioned in their individual proposals).
+                        </p>
+                    </div>
 
-                        The implementing institutes propose to implement formal certification that will maximize its value for the students / trainees. The following options thereof will be studied within the first year. First, certification under the National Skills Qualification Framework will be explored through the relevant agencies. Second, given the implementing institutes’ standing as Institutes of National Importance in the field of HRD with the mandate of floating certified courses and programs, it is also proposed to explore formal certification through internal IISc/IIT channels. [E.g. Continuing Education Programme at IITs that have the mandate of serving the manpower training and knowledge upgradation needs of industry, academia and research organizations, outside of regular degree programs.]
-
-                        In addition to support for training and exploratory research, INUP-i2i will incorporate focused support for translational research addressing Grand Challenges of our nation and society. This will comprise the following: identifying promising nanoengineering solutions through Hackathons, supporting innovative R&D projects, facilitating incubation, and incorporating support to startups (including, but not limited to, those incubated out of the nanocenters at these six institutes) by subsidizing their facility usage and providing them networking opportunities with incubators and prototyping centers. It is proposed that in this initial phase of the ‘unified’ program, IISc and IITB would focus more on supporting research projects and startups, while IITD, IITG, IITKgp and IITM will carry forward the training mandate to a somewhat larger degree. The scope of the program is illustrated below.
-
-
-
-
-
-                        While innovation and incubation will be a strong focus for the future everywhere, we also note the importance of ensuring that academic research, which forms the basis of patents and subsequently of startups, continues to be supported; and, that the next generation of researchers and innovators are trained. This proposal for INUP-i2i seeks to provide a comprehensive solution for training, research and incubation in nanoelectronics with nation-wide coverage. We seek MeitY’s funding and support for a period of three years at these six institutes. The six institutes are proud to share the goal of expending substantial fractions of the funding serving users from communities that are under-represented (SC/ST) and/or areas that are under-served (e.g. North-East) in the current scenario (the exact fractions for the six institutes are mentioned in their individual proposals). A summary of the deliverables and budgets from all the institutes is appended below.
-
-                        <img class="object-contain h-100 w-full mt-2" src="{% static 'main/images/v2.png' %}" alt="" >
-                                        
-                      
-
-
-                    </p>
 
                 </div>
-             
+
             </div>
             <div class="hidden w-full sec-containers" id="sec-objective">
-                <h1 class="text-4xl font-bold">Objective of the Project:
-                </h1>
-                <hr class="mt-5">
+                <h1 class="text-4xl font-bold">Objectives</h1>
+                <hr class="mt-5 mb-10">
+                <div class="flex flex-col w-full justify-center lg:flex-row">
+                    <div class="w-full mb-5 lg:mr-10">
+                        <img class="object-contain w-full rounded-md shadow-lg" src="{% static 'main/images/iitm-pic1.png' %}" alt="">
+                    </div>
+                    <div class="w-full ml-5">
+                        <ul class="list-disc text-xl text-justify">
+                            <li class="mb-5">Enhancing R&D ecosystem in the area of nano electronics by leveraging the Nano centres established by MeitY.</li>
+                            <li class="mb-5">To conduct training/workshops in the field of Nanoelectronics for wider dissemination of knowledge.</li>
+                            <li class="mb-5">To support the exploratory and innovative research for development of technologies in Nanoelectronics. </li>
+                            <li class="mb-5">Broadening of Nano electronics research base in the country by mentoring of tier 2/3 educational institutions through collaboration. </li>
+                            <li class="mb-5">Mentoring startups for commercialization of nano-based technologies.</li>
+                            <li class="mb-5">Conduct Hackathons/Grand Challenge targeting societal applications to develop Nano engineered solutions.</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <ul class="list-disc mt-4 font-bold text-xl  ml-3">
-                    <li>Enhancing R&D ecosystem in the area of nano electronics by leveraging the Nano centres established by MeitY.</li>
-                    <li>To conduct training/workshops in the field of Nanoelectronics for wider dissemination of knowledge.</li>
-                    <li>To support the exploratory and innovative research for development of technologies in Nanoelectronics. </li>
-                    <li>Broadening of Nano electronics research base in the country by mentoring of tier 2/3 educational institutions through collaboration. </li>
-                    <li>Mentoring startups for commercialization of nano-based technologies.</li>
-                    <li>Conduct Hackathons/Grand Challenge targeting societal applications to 	develop Nano engineered solutions.</li>
-                 
-                  </ul>
-                  
-                
             </div>
             <div class="hidden w-full sec-containers" id="sec-features">
                 <h1 class="text-4xl font-bold">Salient Features
                 </h1>
                 <hr class="mt-5">
-
-                <p class="text-xl font-bold mt-4">
-                    Training - </p>
-                    <ul class="list-disc mt-4 font-bold text-lg ml-3">
-                        <li>Level -1 : Familiarization</li>
-                        <li>Level 2 : Hands-on Training</li>
-                        <li>Level 3: Project Training</li>
-                      </ul>
-
-                      <p class="text-xl font-bold mt-4">
-                        Mentoring </p>
-                        <p class="mt-2">Startups & Collaborating Institutes
-                        </p>
-
-                      <div>
-                        <img class="object-contain h-100 w-full mt-2" src="{% static 'main/images/image1.png' %}" alt="" >
-
-                    </div>
-
-
-
-
+                <h3 class="text-2xl mt-4 font-bold">Different Levels of Training</h3>
+                <ul class="list-disc mt-4 font-bold text-lg ml-10">
+                    <li class="mt-3">Level - 1 : Familiarization</li>
+                    <li class="mt-3">Level - 2 : Hands-on Training</li>
+                    <li class="mt-3">Level - 3 : Project Training</li>
+                </ul>
+                <h3 class="text-2xl font-bold mt-5">Mentoring </h3>
+                <p class="mt-2 font-bold text-lg">Startups & Collaborating Institutes
+                </p>
+                <div class="mr-auto ml-auto w-9/12 mt-5">
+                    <img class="object-contain w-full" src="{% static 'main/images/image1.png' %}" alt="">
+                </div>
             </div>
             <div class="hidden w-full sec-containers" id="sec-modalities">
                 <h1 class="text-4xl font-bold">Modalities</h1>
             </div>
             <div class="hidden w-full sec-containers" id="sec-programmes">
-                <h1 class="text-4xl font-bold">Type of Program
+                <h1 class="text-4xl font-bold">Types of Program
                 </h1>
                 <hr class="mt-5">
-                
-                <p class="mt-4"><span class="text-xl font-bold mt-4">Level 1 - Familiarization lecture</span> introduces different aspects of Nanoelectronics and provides exposure to the research infrastructure available at the Nanocenters. The lecture series is organized as modules, such as MEMS cantilever, microfluidics, spintronics, 2D MoS2 transistors, interdigitated electrode devices, GaN LEDs, photovoltaics and nanophotonics. The lecture series would be available on NPTEL as well as any IT-enabled platform preferred by MeitY. Apart from modules, there would be a series of lectures and application notes on equipment available at the Nanocenters. These would provide in-depth information about the equipment and their capabilities.
-                </p>
-                <p class="mt-4"><span class="text-xl font-bold mt-4">Level 2 – Hands-on training</span> program will be conducted at the Nanocenters for selected researchers. We envision providing the researchers 10-15 days of rigorous training on equipment and the processes that are likely to be used for their project execution. In addition to academic users, we would initiate programs for industry and strategic sector. In INUP-i2i, we will conduct a special level-2 training workshop for the new IITs joining the INUP-i2i programme. This workshop will transfer INUP-related knowhow, for smooth launch of the INUP-i2i programme at their respective institutions.</p>
-               
-                <p class="mt-4"><span class="text-xl font-bold mt-4">Level 3 </span> –The selected projects from researchers trained at Levels 1 and 2, will be executed at the Nanocenters in Level 3. Professional experts at the Nanocenters employed under this project (in addition to faculty) will provide the required support and guidance.
-
-                </p>
-
-                <p class="mt-4">In the INUP-i2i, two classes of Level-3 projects will be supported. The first is ‘<span class="text-xl font-bold mt-4">Research and Innovation Projects</span>’, and the second is ‘<span class="text-xl font-bold mt-4">Startup Support</span>’.
-                </p>
-                <div>
-                    <img class="object-contain h-100 w-full mt-2" src="{% static 'main/images/image1.png' %}" alt="" >
-
+                <div class="w-9/12 mr-auto ml-auto mt-5 mb-10">
+                    <img class="object-contain w-full mt-2" src="{% static 'main/images/image1.png' %}" alt="">
                 </div>
+                <p class="mt-5 text-justify text-xl"><strong class="">Level 1 - Familiarization</strong> lecture introduces different aspects of Nanoelectronics and provides exposure to the research infrastructure available at the Nanocenters. The lecture series is organized as modules,
+                    such as MEMS cantilever, microfluidics, spintronics, 2D MoS2 transistors, interdigitated electrode devices, GaN LEDs, photovoltaics and nanophotonics. The lecture series would be available on NPTEL as well as any IT-enabled platform
+                    preferred by MeitY. Apart from modules, there would be a series of lectures and application notes on equipment available at the Nanocenters. These would provide in-depth information about the equipment and their capabilities.
+                </p>
+                <p class="mt-5 text-justify text-xl"><strong class="">Level 2 – Hands-on training</strong> program will be conducted at the Nanocenters for selected researchers. We envision providing the researchers 10-15 days of rigorous training on equipment and the processes that are
+                    likely to be used for their project execution. In addition to academic users, we would initiate programs for industry and strategic sector. In INUP-i2i, we will conduct a special level-2 training workshop for the new IITs joining the
+                    INUP-i2i programme. This workshop will transfer INUP-related knowhow, for smooth launch of the INUP-i2i programme at their respective institutions.</p>
+
+                <p class="mt-5 text-justify text-xl"><strong class="">Level 3 </strong> –The selected projects from researchers trained at Levels 1 and 2, will be executed at the Nanocenters in Level 3. Professional experts at the Nanocenters employed under this project (in addition to faculty)
+                    will provide the required support and guidance.
+                </p>
+                <p class="mt-5 text-justify text-xl">In the INUP-i2i, two classes of Level-3 projects will be supported. The first is ‘<span class="text-xl font-bold mt-4">Research and Innovation Projects</span>’, and the second is ‘<span class="text-xl font-bold mt-4">Startup Support</span>’.
+                </p>
+
 
 
             </div>
@@ -179,10 +199,57 @@
             <div class="hidden w-full sec-containers" id="sec-contact">
                 <h1 class="text-4xl font-bold">Contact</h1>
             </div>
-        
+
         </div>
-    
+
     </div>
+</div>
+<!-- sidebar -->
+<div class="sidemenu rounded p-2"><i class="fas fa-angle-double-left"></i></div>
+<!-- mainmenu -->
+<div class="sidebar p-4">
+    <!-- highligts -->
+<div style="background-color: #012443;" class=" rounded p-4">    <div class="flex justify-between">
+    <h1 class="text-xl font-bold">HIGHLIGHTS </h1>
+    <hr>
+    <div class=""><a href="">View all</a></div>
+
+</div>
+    
+<div  style="height:auto;overflow-y:hidden;width:96%;">
+    <div class="w-full flex flex-row items-start pt-2 pb-4 pl-4 border-b-2" >
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+     </div>
+    <div class="w-full flex flex-row items-start pt-2 pb-4 pl-4 border-b-2">
+       
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    </div>
+   
+    
+</div>
+</div>
+<!--  -->
+<!-- anouncmeenets -->
+<div style="background-color: #FF4848;" class="rounded  mt-2 p-4">    <div class="flex justify-between">
+    <h1 class="text-xl font-bold">ANNOUNCEMENTS </h1>
+    <hr>
+    <div class=""><a href="">View all</a></div>
+
+</div>
+    
+<div style="color:#ffffff" class="text-xl mt-5 font-semibold">16 November 2021</div>
+<p class="pt-2">IITBNF has evolved over decades through multiple research projects.</p>
+<hr class="mt-2">
+
+
+<div style="color:#ffffff" class="text-xl mt-5 font-semibold">16 November 2021</div>
+<p class="pt-2">IITBNF has evolved over decades through multiple research projects.</p>
+<hr class="mt-2">
+
+</div>
+
+<div class="closebox mt-5 p-3 rounded "> CLOSE</div>
+    
 </div>
 
 <div class="py-10 px-2" style="position:fixed;right:0;top:50vh;background-color:#E33434;border-radius: 8px 0 0 8px;cursor:pointer">
@@ -219,171 +286,189 @@
 </div>
 
 <script>
-    var visionbtn=document.getElementById("sec-vision-btn");
-    var vision=document.getElementById("sec-vision");
-    var objectivebtn=document.getElementById("sec-objective-btn");
-    var objective=document.getElementById("sec-objective");
-    var featuresbtn=document.getElementById("sec-features-btn");
-    var features=document.getElementById("sec-features");
-    var modalitiesbtn=document.getElementById("sec-modalities-btn");
-    var modalities=document.getElementById("sec-modalities");
-    var programmesbtn=document.getElementById("sec-programmes-btn");
-    var programmes=document.getElementById("sec-programmes");
-    var teambtn=document.getElementById("sec-team-btn");
-    var team=document.getElementById("sec-team");
-    var investigatorsbtn=document.getElementById("sec-investigators-btn");
-    var investigators=document.getElementById("sec-investigators");
-    var contactbtn=document.getElementById("sec-contact-btn");
-    var contact=document.getElementById("sec-contact");
-    var btns=document.getElementsByClassName("btns");
-    var secs=document.getElementsByClassName("sec-containers");
-    // mobile
-    var mblNavBtn=document.getElementById("mobile-nav-btn");
-    var mblNav=document.getElementById("mobile-nav");
-    var visionbtnm=document.getElementById("sec-vision-btnm");
-    var objectivebtnm=document.getElementById("sec-objective-btnm");
-    var featuresbtnm=document.getElementById("sec-features-btnm");
-    var modalitiesbtnm=document.getElementById("sec-modalities-btnm");
-    var programmesbtnm=document.getElementById("sec-programmes-btnm");
-    var teambtnm=document.getElementById("sec-team-btnm");
-    var investigatorsbtnm=document.getElementById("sec-investigators-btnm");
-    var contactbtnm=document.getElementById("sec-contact-btnm");
-    var btnsm=document.getElementsByClassName("btnsm");
 
-    
-    mblNavBtn.addEventListener("click",()=>{
+
+
+
+    var visionbtn = document.getElementById("sec-vision-btn");
+    var vision = document.getElementById("sec-vision");
+    var objectivebtn = document.getElementById("sec-objective-btn");
+    var objective = document.getElementById("sec-objective");
+    var featuresbtn = document.getElementById("sec-features-btn");
+    var features = document.getElementById("sec-features");
+    var modalitiesbtn = document.getElementById("sec-modalities-btn");
+    var modalities = document.getElementById("sec-modalities");
+    var programmesbtn = document.getElementById("sec-programmes-btn");
+    var programmes = document.getElementById("sec-programmes");
+    var teambtn = document.getElementById("sec-team-btn");
+    var team = document.getElementById("sec-team");
+    var investigatorsbtn = document.getElementById("sec-investigators-btn");
+    var investigators = document.getElementById("sec-investigators");
+    var contactbtn = document.getElementById("sec-contact-btn");
+    var contact = document.getElementById("sec-contact");
+    var btns = document.getElementsByClassName("btns");
+    var secs = document.getElementsByClassName("sec-containers");
+    // mobile
+    var mblNavBtn = document.getElementById("mobile-nav-btn");
+    var mblNav = document.getElementById("mobile-nav");
+    var visionbtnm = document.getElementById("sec-vision-btnm");
+    var objectivebtnm = document.getElementById("sec-objective-btnm");
+    var featuresbtnm = document.getElementById("sec-features-btnm");
+    var modalitiesbtnm = document.getElementById("sec-modalities-btnm");
+    var programmesbtnm = document.getElementById("sec-programmes-btnm");
+    var teambtnm = document.getElementById("sec-team-btnm");
+    var investigatorsbtnm = document.getElementById("sec-investigators-btnm");
+    var contactbtnm = document.getElementById("sec-contact-btnm");
+    var btnsm = document.getElementsByClassName("btnsm");
+
+
+    mblNavBtn.addEventListener("click", () => {
 
         console.log("hello");
-        mblNav.style.display="flex";
-        body.style.overflowY="hidden";
+        mblNav.style.display = "flex";
+        body.style.overflowY = "hidden";
     });
 
-    function toggleSec(btn,sec){
-        
+    function toggleSec(btn, sec) {
+
         btn.classList.add("active-sec");
-       
-        for(var i=0;i<btns.length;i++){
-            if(btns[i]==btn){
-                
+
+        for (var i = 0; i < btns.length; i++) {
+            if (btns[i] == btn) {
+
                 continue;
-            }
-            else{
+            } else {
                 btns[i].classList.remove("active-sec");
-                secs[i].style.display="none";
+                secs[i].style.display = "none";
 
             }
         }
-        sec.style.display="block";
-       
+        sec.style.display = "block";
+
     }
-    function toggleSecm(btn,sec){
-        
+
+    function toggleSecm(btn, sec) {
+
         btn.classList.add("active-sec");
-       
-        for(var i=0;i<btnsm.length;i++){
-            if(btnsm[i]==btn){
-                
+
+        for (var i = 0; i < btnsm.length; i++) {
+            if (btnsm[i] == btn) {
+
                 continue;
-            }
-            else{
+            } else {
                 btnsm[i].classList.remove("active-sec");
-                secs[i].style.display="none";
+                secs[i].style.display = "none";
 
             }
         }
-        sec.style.display="block";
-        mblNav.style.display="none";
-        body.style.overflowY="scroll"
-       
+        sec.style.display = "block";
+        mblNav.style.display = "none";
+        body.style.overflowY = "scroll"
+
     }
 
 
-    visionbtn.addEventListener("click",()=>{
-      
-        
-        toggleSec(visionbtn,vision);
+    visionbtn.addEventListener("click", () => {
+
+
+        toggleSec(visionbtn, vision);
     });
-    objectivebtn.addEventListener("click",()=>{
-        
-        toggleSec(objectivebtn,objective);
+    objectivebtn.addEventListener("click", () => {
+
+        toggleSec(objectivebtn, objective);
     });
-    featuresbtn.addEventListener("click",()=>{
-      
-    
-      toggleSec(featuresbtn,features);
-  });
-  modalitiesbtn.addEventListener("click",()=>{
-      
-      toggleSec(modalitiesbtn,modalities);
-  });
-  visionbtn.addEventListener("click",()=>{
-      
-    
-      toggleSec(visionbtn,vision);
-  });
-  programmesbtn.addEventListener("click",()=>{
-     
-      toggleSec(programmesbtn,programmes);
-  });
-  teambtn.addEventListener("click",()=>{
-      
-   
-      toggleSec(teambtn,team);
-  });
-  investigatorsbtn.addEventListener("click",()=>{
-     
-      toggleSec(investigatorsbtn,investigators);
-  });
-  contactbtn.addEventListener("click",()=>{
-   
-      toggleSec(contactbtn,contact);
-  });
-  
-
-  //mobile event listeners
-  visionbtnm.addEventListener("click",()=>{
-      
-        
-      toggleSecm(visionbtnm,vision);
-  });
-  objectivebtnm.addEventListener("click",()=>{
-      
-      toggleSecm(objectivebtnm,objective);
-  });
-  featuresbtnm.addEventListener("click",()=>{
-    
-  
-    toggleSecm(featuresbtnm,features);
-});
-modalitiesbtnm.addEventListener("click",()=>{
-    
-    toggleSecm(modalitiesbtnm,modalities);
-});
-visionbtnm.addEventListener("click",()=>{
-    
-  
-    toggleSecm(visionbtnm,vision);
-});
-programmesbtnm.addEventListener("click",()=>{
-   
-    toggleSecm(programmesbtnm,programmes);
-});
-teambtnm.addEventListener("click",()=>{
-    
- 
-    toggleSecm(teambtnm,team);
-});
-investigatorsbtnm.addEventListener("click",()=>{
-   
-    toggleSecm(investigatorsbtnm,investigators);
-});
-contactbtnm.addEventListener("click",()=>{
- 
-    toggleSecm(contactbtnm,contact);
-});
+    featuresbtn.addEventListener("click", () => {
 
 
+        toggleSec(featuresbtn, features);
+    });
+    modalitiesbtn.addEventListener("click", () => {
 
+        toggleSec(modalitiesbtn, modalities);
+    });
+    visionbtn.addEventListener("click", () => {
+
+
+        toggleSec(visionbtn, vision);
+    });
+    programmesbtn.addEventListener("click", () => {
+
+        toggleSec(programmesbtn, programmes);
+    });
+    teambtn.addEventListener("click", () => {
+
+
+        toggleSec(teambtn, team);
+    });
+    investigatorsbtn.addEventListener("click", () => {
+
+        toggleSec(investigatorsbtn, investigators);
+    });
+    contactbtn.addEventListener("click", () => {
+
+        toggleSec(contactbtn, contact);
+    });
+
+
+    //mobile event listeners
+    visionbtnm.addEventListener("click", () => {
+
+
+        toggleSecm(visionbtnm, vision);
+    });
+    objectivebtnm.addEventListener("click", () => {
+
+        toggleSecm(objectivebtnm, objective);
+    });
+    featuresbtnm.addEventListener("click", () => {
+
+
+        toggleSecm(featuresbtnm, features);
+    });
+    modalitiesbtnm.addEventListener("click", () => {
+
+        toggleSecm(modalitiesbtnm, modalities);
+    });
+    visionbtnm.addEventListener("click", () => {
+
+
+        toggleSecm(visionbtnm, vision);
+    });
+    programmesbtnm.addEventListener("click", () => {
+
+        toggleSecm(programmesbtnm, programmes);
+    });
+    teambtnm.addEventListener("click", () => {
+
+
+        toggleSecm(teambtnm, team);
+    });
+    investigatorsbtnm.addEventListener("click", () => {
+
+        toggleSecm(investigatorsbtnm, investigators);
+    });
+    contactbtnm.addEventListener("click", () => {
+
+        toggleSecm(contactbtnm, contact);
+    });
+// sidemenu
+var sidebtn=document.querySelector(".sidemenu");
+var sidemain=document.querySelector(".sidebar");
+var cancelBox=document.querySelector(".closebox");
+
+sidebtn.addEventListener('click',()=>{
+   
+sidemain.classList.toggle("active")
+
+
+
+})
+cancelBox.addEventListener("click",()=>{
+    sidemain.classList.remove("active")
+
+})
+
+    
 </script>
 
 {% endblock content %}
