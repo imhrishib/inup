@@ -9,3 +9,16 @@
     color:white;
 }
 
+#mobile-nav{
+    
+    height:75vh;
+    background-color:#F4F4F4;
+  
+    overflow:hidden;
+}
+#mobile-nav div div{
+    
+   
+   padding:1.2vh
+}
+
